@@ -1,0 +1,28 @@
+// All other colors will be derived from this one
+$primary: lightyellow
+//derived
+$complement: complement($primary)
+$invert: invert($primary)
+
+$triadic-secondary: adjust-hue($primary, 120deg)
+$triadic-tertiary: adjust-hue($primary, 240deg)
+$brother: adjust-hue($primary, 30deg)
+$sister: adjust-hue($primary, 330deg)
+$father: adjust-hue($primary, 60deg)
+$mother: adjust-hue($primary, 300deg)
+$right: adjust-hue($primary, 90deg)
+$left: adjust-hue($primary, 270deg)
+
+// context
+$warning: $left
+$danger: $right
+$disabled: #555
+
+$info: $father
+$success: $mother
+$hover: $brother
+$active: $sister
+
+body
+  color: $primary
+  background-color: $invert
