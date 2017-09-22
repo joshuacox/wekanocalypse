@@ -1,5 +1,5 @@
 // All other colors will be derived from this one
-$primary: lightyellow
+$primary: lime
 //derived
 $complement: complement($primary)
 $invert: invert($primary)
@@ -15,14 +15,174 @@ $left: adjust-hue($primary, 270deg)
 
 // context
 $warning: $left
+$warningbg: invert($left)
 $danger: $right
+$dangerbg: invert($right)
 $disabled: #555
+$disabledbg: invert(#555)
 
 $info: $father
 $success: $mother
 $hover: $brother
 $active: $sister
 
-body
-  color: $primary
-  background-color: $invert
+$infobg: darken(invert($father), 33%)
+$successbg: darken(invert($mother), 33%)
+$hoverbg: darken(invert($sister), 33%)
+$activebg: darken(invert($brother), 33%)
+
+$fg: lighten($primary, 25%)
+$bg: darken($invert, 33%)
+
+$fg1: lighten($primary, 15%)
+$bg1: darken($invert, 40%)
+
+$fg2: darken($primary, 5%)
+$bg2: darken($invert, 45%)
+
+$fg3: darken($primary, 33%)
+$bg3: darken($invert, 33%)
+
+@-moz-document domain("wekan.thalhalla.net"),domain("wekan.indie.host")
+
+  hr,
+  body,
+  #header-quick-access ul li,
+  .member .avatar.avatar-initials,
+  #header, #header-quick-access, #header-quick-access.board-color-belize
+    color: $fg
+    background: $bg
+
+  .setting-content,
+  #modal .modal-content,
+  .list-body .open-minicard-composer,
+  .card-details .card-details-header
+    color: $fg1
+    background: $bg1
+
+  .minicard,
+  .card-details
+    color: $fg2
+    background: $bg2
+
+  .setting-content .content-body .main-body,
+  .setting-content .content-body .side-menu
+    color: $fg3
+    background: $bg3
+
+  .board-list .is-star-active,
+  .setting-content .content-body .side-menu ul li.active
+    color: $active
+    background: $activebg
+
+  .board-list .board-list-item,
+  #header.board-color-belize, .board-color-belize.sk-spinner div, .board-backgrounds-list .board-color-belize.background-box, .board-list .board-color-belize a
+    color: $fg2
+    background-color: $bg2
+
+  tbody
+    background-color: $bg2
+
+  #header,
+  #header #header-main-bar .board-header-btn,
+  #header #header-main-bar .board-header-btn i.fa,
+  #header #header-main-bar .setting-header-btn,
+  #header #header-main-bar .setting-header-btn i.fa,
+  a.fa, a i.fa,
+  .sidebar .sidebar-shortcuts,
+  .list.list-composer .open-list-composer, .list .list-composer .open-list-composer
+    color: $fg1
+
+  .sidebar-tongue,
+  .sidebar .sidebar-shadow,
+  .sidebar .sidebar-content h3
+    background: $bg1
+
+  .activities .activity .activity-desc .activity-meta,
+  .setting-content .content-body .main-body, .setting-content .content-body .side-menu,
+  #header-quick-access #header-user-bar, #header-quick-access #header-new-board-icon, #header-quick-access ul li
+    color: $fg2
+
+  a
+    color: $fg
+    background-color: inherit
+
+  .list
+    color: $fg1
+    background: $bg1
+    border-left: 1px solid $bg2
+
+  .checklist-items .item:hover
+    background-color: $hoverbg
+
+  .list-body .open-minicard-composer:hover,
+  .minicard:hover:not(.minicard-composer), .is-selected .minicard, .draggable-hover-card .minicard
+    color: $hover
+    background: $hoverbg
+
+  .new-comment textarea
+    color: $fg2
+    background: black
+
+  .board-color-belize button.primary[type="submit"], .board-color-belize input.primary[type="submit"]
+    color: $info
+    background: $infobg
+
+  .activities .activity .activity-desc .activity-comment,
+  .activities .activity .activity-desc .activity-checklist,
+  .js-new-board-title,
+  textarea, input:not([type="file"]), button,
+  .list.list-composer .list-name-input, .list .list-composer .list-name-input,
+  input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus
+    color: $fg2
+    background: $bg2
+    border: 1px solid $bg1
+
+  .card-details .card-details-item-title
+    color: $fg2
+
+  .member.add-member, .card-label.add-label
+    box-shadow: 0 0 0 2px $fg inset
+
+  .pop-over .header
+    color: $fg1
+    border-bottom: 1px solid $bg1
+    background: $bg1
+
+  .pop-over
+    background: $bg2
+    border: 1px solid $bg2
+
+  kbd
+    color: $fg2
+    background: $bg2
+    border: 1px solid $bg2
+
+  .shortcuts-list .shortcuts-list-item
+    border-bottom: 1px solid $bg2
+
+  .board-list .js-add-board :hover,
+  input.primary[type="submit"]:hover, button.primary:hover, input.primary[type="submit"]:focus, button.primary:focus
+    background: $hoverbg
+
+  .quiet, .quiet a
+    color: $fg1
+
+  input.primary[type="submit"], button.primary
+    background: $infobg
+
+  .warning
+    color: $warning
+    background: $warningbg
+
+  td, th
+    border-right: 1px solid $bg2
+    border-bottom: 1px solid $bg2
+
+  table, td, th
+    border-top: 1px solid $bg2
+    border-left: 1px solid $bg2
+
+  .setting-content .content-body .side-menu
+    background-color: $bg2
+    border: 1px solid $bg2
